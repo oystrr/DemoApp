@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_contact.view.*
 
 class ContactAdapter(private val context: Context, private val contacts: List<Contact>)
@@ -14,6 +15,7 @@ class ContactAdapter(private val context: Context, private val contacts: List<Co
             itemView.tvName.text = contact.name
             itemView.tvAge.text = "Age : ${contact.age}"
 
+            Glide.with(context).load(contact.imageUrl).into(itemView.ivProfile)
         }
 
     }
